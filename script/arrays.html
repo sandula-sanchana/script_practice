@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    //literal based array
+    let x=["apple","banana","orange",function (){}];
+    console.log(x);
+    console.log(x[1]);
+    console.log(x[3]);
+
+    //array constructor based
+
+    var n=new Array(10,"hi1",true);
+    console.log(n);
+    console.log(n[0]);
+    console.log(n[1]);
+
+    n.push("tata",false)
+    console.log(n);
+    n.unshift("A",34)
+    console.log(n);
+    n.pop();
+    console.log(n);
+    n.shift();
+    console.log(n);
+
+    console.log(x.concat(n));
+
+    let w=[1,2,3];
+    let y=[4,5,3];
+    console.log(w.concat(y))
+
+    console.log(x.slice(1));
+
+    let oo=w.splice(1);
+    console.log(oo);
+    console.log(w);
+
+    let pp=[1,2,3,4,5,6,7,8]
+
+    //console.log(pp.slice(1,5))
+    console.log(pp.splice(1,5,100,200,300));
+    console.log(pp);
+
+    console.log(pp.includes(200));
+
+    let newa=[];
+
+    newa=pp.filter(function (i){
+        return i%2===0;
+    });
+
+    console.log(newa);
+
+    pp.forEach(function (i){
+        console.log(i);
+    });
+
+    pp.map((i,index)=>{
+        console.log(index+" : "+i);
+    });
+
+    console.log(pp.sort());
+
+    console.log(pp.sort((a,b)=>a-b));
+
+    console.log(pp.sort((a,b)=>b-a));
+
+    console.log(pp.reverse());
+
+    console.log(pp.toString());
+
+    console.log(pp.join("-"));
+
+</script>
+</body>
+</html>

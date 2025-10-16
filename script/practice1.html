@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var x=["hey",10,true,function () {},"banana","mango"];//literal arr
+
+    console.log(x);
+
+    var n=new Array("banana","mango");//constr. arr
+
+    console.log(n);
+
+     // x.push("tata");//add to top
+     // console.log(x);
+     // x.unshift("baba");// add to front
+     // console.log(x);
+     // x.pop();//rm from top
+     // console.log(x);
+     // x.shift();//rm from front
+     // console.log(x);
+
+     console.log( x.concat(n));
+
+
+   x.slice(1,3);// make a new array and reutn that piece, return index on to index 2 here, not 3
+   console.log(x);
+
+   // console.log(x.splice(1,3));//mutate the array and send that piece(origina array change)//(start index,count from start index)
+   // console.log(x);
+
+    console.log(x.includes("mango"));// retun true or false according to the condition
+
+    var z=[1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+
+    var even=z.filter(function (i){
+       return i%2===0;
+    });
+
+    console.log(even);
+
+    z.forEach(function (i){
+         console.log(i);
+    });
+
+
+
+
+
+
+</script>
+</body>
+</html>

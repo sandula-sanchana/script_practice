@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    //named
+    function hello(){
+        console.log("hello");
+    }
+
+    hello();
+
+    function hello2(name){
+        console.log(name);
+    }
+    hello2("myname");
+
+    function add(a,b){
+        return a+b;
+    }
+
+    let x=add(5,3);
+    console.log(x);
+
+    //function expression
+
+    const fe=function (){
+        console.log("funtion expression");//risk--- can be re assigned
+        //use const to avoid this risk
+    }
+    fe();
+
+    let fe2=function (name){
+        console.log(name);
+    }
+    fe2("myname2");
+
+    //arrow funtion
+
+    let af=()=>{
+        console.log("arrow funtion");
+    }
+
+    af();
+
+    const af2=(name)=>{
+        console.log(name);
+    }
+    af2("sandula");  //return keyword not needed for single line
+
+    //function constructor
+
+    const fc=new Function("a","b","return a+b");
+    let y=fc(5,6);
+    console.log(y);
+
+
+</script>
+</body>
+</html>
