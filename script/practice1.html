@@ -47,6 +47,30 @@
          console.log(i);
     });
 
+    z.map(function (value,index){
+       z[index]=value*10;
+    });
+    console.log(z);
+
+    var t=[1,67,8,9,0,45,3,99];
+
+    t.sort((x,y)=>{
+         console.log(`Comparing ${x} and ${y}`);
+        return x-y});
+
+    console.log(t);
+
+    let i=90;
+    let o=60;
+
+    console.log(`${i} and ${o}`);//template literal
+
+    t.reverse();
+
+    console.log(t)
+
+    console.log(t.join("--"));//connect and return a String
+
 
 
 
