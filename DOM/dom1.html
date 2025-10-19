@@ -12,14 +12,45 @@
 <body>
 
 <h1 id="name">Sandula</h1>
+<h1 id="topic"> Welcome to JavaScript!<b>cupiri</b></h1>
+<h1> Welcome to CSS! </h1>
+
+<div id="myDiv"><div>Hello! Welcome to HTML!</div></div>
+
+<p x="" class="myDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cupiditate distinctio exercitationem facilis, labore laborum modi perspiciatis qui unde voluptatum. Nesciunt numquam repellat sunt ullam voluptate. Commodi impedit obcaecati unde!</p>
+<p class="myDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cupiditate distinctio exercitationem facilis, labore laborum modi perspiciatis qui unde voluptatum. Nesciunt numquam repellat sunt ullam voluptate. Commodi impedit obcaecati unde!</p>
+<p class="myDescription">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cupiditate distinctio exercitationem facilis, labore laborum modi perspiciatis qui unde voluptatum. Nesciunt numquam repellat sunt ullam voluptate. Commodi impedit obcaecati unde!</p>
+
+<h2 name="abc">Let's Learn JS</h2>
+<h2 name="dfc">Let's Learn HTML</h2>
+<h2 name="abc">Let's Learn CSS</h2>
 
 <script>
 
-    // var n=document.getElementById("name").innerText
+    // var n=document.getElementById("name").innerText     // GET ELEMENT BY ID
     // console.log(n);
 
-    var n=document.getElementById("name")
-    n.innerText="yeeee"
+    // var n=document.getElementById("name")
+    // n.innerText="yeeee"
+
+    // var y=document.getElementsByClassName("myDescription") // GET ELEMENT BY CLASS, GETS ELEMNTS AS A ARRAY
+
+    // console.log(y)
+    // VM106:1 HTMLCollection(3) [p.myDescription, p.myDescription, p.myDescription]0: p.myDescription1: p.myDescription2: p.myDescriptionlength: 3[[Prototype]]: HTMLCollection
+    // console.log(y[0])//gets the first element
+    // VM166:1 <p x class=​"myDescription">​…​</p>​"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cupiditate distinctio exercitationem facilis, labore laborum modi perspiciatis qui unde voluptatum. Nesciunt numquam repellat sunt ullam voluptate. Commodi impedit obcaecati unde!"</p>​
+    // undefined
+    // console.log(y[0].innerText)
+    // VM189:1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cupiditate distinctio exercitationem facilis, labore laborum modi perspiciatis qui unde voluptatum. Nesciunt numquam repellat sunt ullam voluptate. Commodi impedit obcaecati unde!
+
+    var h1_list = document.getElementsByTagName('h1');// elemts by tag name(array)
+
+    h1_list[0].innerText;
+    'Sandula'
+    h1_list[1].innerText;
+    'Welcome to JavaScript!cupiri' //only the text inside by innerText
+    h1_list[1].innerHTML;
+    ' Welcome to JavaScript!<b>cupiri</b>' // inner html returns the html tags of nexted elements
 
 </script>
 </body>
