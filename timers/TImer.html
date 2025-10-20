@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="../assets/lib/normalize.css">
+    <style>
+        section {
+            width: 100vw;
+            height: 100vh;
+            background: teal;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #wrapper {
+            display: flex;
+            gap: 30px;
+            font-size: 40px;
+            color: white;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div id="wrapper">
+        <div><span id="min">0</span> :</div>
+        <div><span id="sec">0</span> :</div>
+        <div><span id="msec">0</span></div>
+    </div>
+    <div>
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+</section>
+
+<script>
+    let min = document.getElementById('min');
+    let sec = document.getElementById('sec');
+    let msec = document.getElementById('msec');
+
+    let startTime = 0;
+    let elapsedTime = 0;
+    let timerInterval = null;
+
+    function updateDisplay() {
+        const time = elapsedTime + (Date.now() - startTime);
+        const minutes = Math.floor(time / 60000);
+        const seconds = Math.floor((time % 60000) / 1000);
+        const milliseconds = Math.floor((time % 1000) / 10);
+
+        min.innerText = minutes.toString().padStart(2, '0');
+        sec.innerText = seconds.toString().padStart(2, '0');
+        msec.innerText = milliseconds.toString().padStart(2, '0');
+    }
+
+    function startTheTimer() {
+        if (timerInterval) return; // already running
+        startTime = Date.now();
+        timerInterval = setInterval(updateDisplay, 10);
+    }
+
+    function stopTheTimer() {
+        if (!timerInterval) return;
+        elapsedTime += Date.now() - startTime;
+        clearInterval(timerInterval);
+        timerInterval = null;
+    }
+
+    function resetTheTimer() {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        startTime = 0;
+        elapsedTime = 0;
+        min.innerText = sec.innerText = msec.innerText = '00';
+    }
+
+    document.getElementById('start').addEventListener('click', startTheTimer);
+    document.getElementById('stop').addEventListener('click', stopTheTimer);
+    document.getElementById('reset').addEventListener('click', resetTheTimer);
+</script>
+</body>
+</html>
