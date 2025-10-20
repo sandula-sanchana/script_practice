@@ -67,6 +67,8 @@
     function startTheTimer() {
         if (timerInterval) return; // already running
         startTime = Date.now();
+        var startAlert=prompt("start","cal started")
+        console.log(startAlert);// alerts
         timerInterval = setInterval(updateDisplay, 10);
     }
 
