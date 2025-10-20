@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var x=setInterval(() => {
+        console.log("Hello!");
+    }, 10);
+
+    setTimeout(() => {
+        console.log("Runs once after 3 seconds");
+    }, 1000);
+
+    setTimeout(()=>{
+        clearInterval(x);
+        console.log("stopped the repeate one")
+    },10000);
+</script>
+
+</body>
+</html>
