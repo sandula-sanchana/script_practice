@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Hello IJSE 01!</h1>
+<h1>Hello IJSE 02!</h1>
+<h2>Hello JQuery!</h2>
+
+<script src="../assets/lib/jquery.js">
+</script>
+
+<script>
+    $(document).ready(function() {
+        console.log("✅ jQuery is working!");
+
+        // Just to show it's active — style the H1 elements
+        $('h1').css('color', 'blue');
+    });
+
+
+    // ✅ jQuery is working!
+    //     $('h1')
+    // ce.fn.init {0: h1, 1: h1, length: 2, prevObject: ce.fn.init}//returns jquery object
+    // $('h1').text;
+    // ƒ (e){return M(this,function(e){return void 0===e?ce.text(this):this.empty().each(function(){1!==this.nodeType&&11!==this.nodeType&&9!==this.nodeType||(this.textContent=e)})},null,e,arguments.length)}
+    // $('h1').eq(0).text;
+    // ƒ (e){return M(this,function(e){return void 0===e?ce.text(this):this.empty().each(function(){1!==this.nodeType&&11!==this.nodeType&&9!==this.nodeType||(this.textContent=e)})},null,e,arguments.length)}
+    // $('h1').eq(0).text();
+    //
+    // 'Hello IJSE 01!'
+    // $('h1').eq(0).text("alooo");
+    //
+    // ce.fn.init {0: h1, length: 1, prevObject: ce.fn.init}
+    // $('h1').css{'color':'green','background':'red'}
+    // VM320:1 Uncaught SyntaxError: Unexpected token '{'Understand this error
+    // $('h1').css({'color':'green','background':'red'})
+</script>
+</body>
+</html>
