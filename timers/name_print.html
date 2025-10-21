@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1 id="name_printer"></h1>
+
+<script>
+
+    let name="sandula";
+
+    let current_index=0;
+
+    let h1=document.getElementById('name_printer');
+
+
+    let x=setInterval(function (){
+        h1.innerText=name.slice(0,current_index+1)
+        current_index++;
+    },500)
+
+    if(current_index===name.length){
+        clearInterval(x);
+    }
+
+</script>
+</body>
+</html>
