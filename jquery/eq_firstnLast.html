@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery DOM</title>
+</head>
+<body>
+
+<h1>Hello 01</h1>
+<h1>Hello 02</h1>
+<h1>Hello 03</h1>
+<h1>Hello 04</h1>
+
+<script src="../assets/lib/jquery.js"></script>
+<script>
+    $(document).ready(function() {//to wait until DOM is load properly
+
+        console.log($('h1').eq(0).text());  // "Hello 01"
+        console.log($('h1').eq(1).text());  // "Hello 02"
+        console.log($('h1').eq(2).text());  // "Hello 03"
+        console.log($('h1').eq(3).text());  // "Hello 04"
+
+        console.log($('h1').first().text()); // "Hello 01"
+        console.log($('h1').last().text());  // "Hello 04"
+
+        // Example: visually highlight first and last elements
+        $('h1').first().css('color', 'green');
+        $('h1').last().css('color', 'red');
+    });
+</script>
+
+</body>
+</html>
