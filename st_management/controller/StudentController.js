@@ -1,6 +1,7 @@
 import StudentDTO from "../dto/StudentDTO.js"; //         ./ > same folder
 import student_data  from "../db/DB.js";
-import StudentModel from "../model/StudentModel.js";
+import {delete_st, get_all,add_st} from "../model/StudentModel";
+
 
 
 
