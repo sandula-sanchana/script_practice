@@ -18,9 +18,19 @@
 
     console.log(o1.age)//get
 
-    o1.age=22;
+    o1.age=22;//update
 
     console.log(o1);
+
+    //constructor function
+
+    function Student(name,age){
+        this.name=name;
+        this.age=age;
+    }
+
+    var s1=new Student("sandula",21);
+    console.log(s1)
 
 
 
