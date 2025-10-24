@@ -1,6 +1,6 @@
+import StudentDTO from "./StudentDTO"; //         ./ > same folder
 
 
-// ==================== Add Student =======================
 
 const add_student_record = (obj) => {
     let tbl_row = `<tr> <td>${obj.f_name}</td> <td>${obj.l_name}</td> <td>${obj.address}</td> <tr>`;
@@ -17,7 +17,7 @@ $("#student_save_btn").on("click", function () {
     add_student_record(student_obj);
 });
 
-// ==================== Select Student =======================
+
 
 $("#student_tbl_body").on('click', 'tr', function () {
     tbl_row = $(this);

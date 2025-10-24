@@ -30,5 +30,4 @@ class StudentDTO {
     set address(address) {
         this._address=address;
     }
-
 }
