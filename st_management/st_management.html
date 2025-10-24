@@ -81,7 +81,7 @@
                     <th scope="col">Address</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="t_body">
                 <tr>
                     <td>Pathum</td>
                     <td>Mendis</td>
@@ -105,9 +105,28 @@
 
 <script>
 
-    $('#student_save_btn').addEventListener('click',function (){
+    function addSt_To_Table(f_name,l_name,address){
+        let table_row="<tr><td>"+f_name+"</td><td>"+l_name+"</td><td>"+address+"</td></tr>";
+        $('#t_body').append(table_row);
+    }
+
+
+    $('#student_save_btn').on('click',function (){
+        let f_name=$('#f_name').val();
+        let l_name=$('#l_name').val();
+        let address=$('#address').val();
+        console.log(f_name)
+        console.log(l_name)
+        console.log(address)
+
+        addSt_To_Table(f_name,l_name,address);
 
     });
+
+    $('tr').on('click',()=>{
+
+    });
+
 </script>
 </body>
 </html>
