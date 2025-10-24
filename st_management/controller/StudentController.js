@@ -1,5 +1,5 @@
-import StudentDTO from "./StudentDTO.js"; //         ./ > same folder
-import student_data  from "./DB.js";
+import StudentDTO from "../dto/StudentDTO.js"; //         ./ > same folder
+import student_data  from "../db/DB.js";
 
 
 
@@ -7,6 +7,9 @@ import student_data  from "./DB.js";
 //     let tbl_row = `<tr> <td>${obj.f_name}</td> <td>${obj.l_name}</td> <td>${obj.address}</td> <tr>`;
 //     $("#student_tbl_body").append(tbl_row);
 // }
+
+let index;
+let selected_obj;
 
 const add_student_record = () => {
     $('#student_tbl_body').empty();
@@ -37,6 +40,9 @@ $("#student_tbl_body").on('click', 'tr', function () {
     // let result = $(this).index();
     let tds = $(this).children();
 
+     index=$(this).index();
+
+
     let f_name = tds.eq(0).text(); // fname
     let l_last = tds.eq(1).text(); // lname
     let address = tds.eq(2).text(); // address
@@ -50,6 +56,8 @@ $("#student_tbl_body").on('click', 'tr', function () {
 
 $("#student_delete_btn").on('click', () => {
     tbl_row.remove();
+    student_data.splice(index,1);
+    add_student_record();
     $("#student_reset_btn").click();
 });
 
