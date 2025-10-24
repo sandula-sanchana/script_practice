@@ -1,10 +1,20 @@
-import StudentDTO from "./StudentDTO"; //         ./ > same folder
+import StudentDTO from "./StudentDTO.js"; //         ./ > same folder
+import student_data  from "./DB.js";
 
 
 
-const add_student_record = (obj) => {
-    let tbl_row = `<tr> <td>${obj.f_name}</td> <td>${obj.l_name}</td> <td>${obj.address}</td> <tr>`;
-    $("#student_tbl_body").append(tbl_row);
+// const add_student_record = (obj) => {
+//     let tbl_row = `<tr> <td>${obj.f_name}</td> <td>${obj.l_name}</td> <td>${obj.address}</td> <tr>`;
+//     $("#student_tbl_body").append(tbl_row);
+// }
+
+const add_student_record = () => {
+    $('#student_tbl_body').empty();
+    student_data.map((obj,index)=>{
+        let tbl_row = `<tr> <td>${obj.f_name}</td> <td>${obj.l_name}</td> <td>${obj.address}</td> <tr>`;
+        $("#student_tbl_body").append(tbl_row);
+    });
+
 }
 
 $("#student_save_btn").on("click", function () {
@@ -14,7 +24,9 @@ $("#student_save_btn").on("click", function () {
     let address = $("#address").val();
 
     let student_obj = new StudentDTO(f_name, l_name, address);
-    add_student_record(student_obj);
+    student_data.push(student_obj);
+    add_student_record();
+    //add_student_record(student_obj);
 });
 
 
