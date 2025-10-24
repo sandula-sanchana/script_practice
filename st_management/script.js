@@ -3,6 +3,7 @@ function addSt_To_Table(f_name,l_name,address){
     $('#t_body').append(table_row);
 }
 
+let student_obj;
 
 $('#student_save_btn').on('click',function (){//arrow fun tion returns -1 here
     let f_name=$('#f_name').val();
@@ -11,6 +12,11 @@ $('#student_save_btn').on('click',function (){//arrow fun tion returns -1 here
     console.log(f_name)
     console.log(l_name)
     console.log(address)
+
+    // student_obj={
+    //     f_name=f_name,
+    //     la
+    // }
 
     addSt_To_Table(f_name,l_name,address);
 

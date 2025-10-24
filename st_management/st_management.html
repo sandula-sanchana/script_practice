@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Student Management System</title>
@@ -7,10 +9,11 @@
 
     <!-- external css-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
 </head>
+
 <body>
 
+<!--header-->
 <header class="mb-3">
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -34,6 +37,7 @@
 
 </header>
 
+<!--student mgt-->
 <main class="container">
 
     <section class="row">
@@ -64,7 +68,7 @@
                         <button type="button" class="btn btn-success" id="student_save_btn">Save</button>
                         <button type="button" class="btn btn-primary" id="student_update_btn">Update</button>
                         <button type="button" class="btn btn-danger" id="student_delete_btn">Delete</button>
-                        <button type="reset" class="btn btn-info" id="btn_reset">Clear</button>
+                        <button type="reset" class="btn btn-info" id="student_reset_btn">Clear</button>
                     </form>
                 </div>
             </div>
@@ -81,7 +85,7 @@
                     <th scope="col">Address</th>
                 </tr>
                 </thead>
-                <tbody id="t_body">
+                <tbody id="student_tbl_body">
                 <tr>
                     <td>Pathum</td>
                     <td>Mendis</td>
@@ -101,9 +105,10 @@
 
 </main>
 
+<!--script-->
 <script src="../assets/lib/jquery.js"></script>
+<script src="script2.js"></script>
 
-<script src="script.js">
-</script>
 </body>
+
 </html>
