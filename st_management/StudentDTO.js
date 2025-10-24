@@ -31,3 +31,5 @@ class StudentDTO {
         this._address=address;
     }
 }
+
+export default StudentDTO;
