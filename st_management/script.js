@@ -38,3 +38,5 @@ $('#student_delete_btn').on('click',function (){
     result.remove();
     $("#btn_reset").click();
 });
+
+//is js the varible can be assigned before the creation, when compiling js looks for whole doc its called hoisting
