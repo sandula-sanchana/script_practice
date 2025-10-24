@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    var o1={
+        f_name:"sandula",
+        l_name:"sancha",
+        age:21
+    }//object literals
+
+    console.log(o1)
+
+    console.log(o1.age)//get
+
+    o1.age=22;//update
+
+    console.log(o1);
+
+    //constructor function
+
+    function Student(name,age){
+        this.name=name;
+        this.age=age;
+    }
+
+    var s1=new Student("sandula",21);
+    console.log(s1)
+
+    //class syntax
+
+    class Course{
+        constructor(name,time) {
+            this._name=name;//private
+            this.time=time;
+        }
+    }
+
+    var c1=new Course("java",33)
+
+
+    console.log(c1)
+
+
+
+    // get f_name(){
+    //     return this._name;
+    // }
+    //
+    // set time(time){
+    //     this.time=time;
+    // }
+
+
+
+
+
+</script>
+</body>
+</html>
