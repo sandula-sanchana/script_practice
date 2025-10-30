@@ -1,5 +1,5 @@
 import StudentDTO from "../dto/StudentDTO.js"; //         ./ > same folder
-import {delete_st, get_all,add_st,get_a_st} from "../model/StudentModel.js";
+import {delete_st, get_all,add_st,get_a_st,update_st} from "../model/StudentModel.js";
 
 
 
@@ -10,14 +10,12 @@ import {delete_st, get_all,add_st,get_a_st} from "../model/StudentModel.js";
 // }
 
 let index;
-let selected_obj;
-let students;
 
 const add_student_record = () => {
     $('#student_tbl_body').empty();
-    students=get_all();
+    let students=get_all();
     students.map((obj)=>{
-        let tbl_row = `<tr> <td>${obj.f_name}</td> <td>${obj.l_name}</td> <td>${obj.address}</td> </tr>`;
+        let tbl_row = `<tr> <td>${obj.f_name}</td> <td>${obj.l_name}</td> <td>${obj.address}</td></tr>`;
         $("#student_tbl_body").append(tbl_row);
     });
 
@@ -29,10 +27,86 @@ $("#student_save_btn").on("click", function () {
     let l_name = $("#l_name").val();
     let address = $("#address").val();
 
+    if (f_name === "") {
+        Swal.fire("Error", "First Name cannot be empty!", "error");
+        return;
+    }
+
+    if (l_name === "") {
+        Swal.fire("Error", "Last Name cannot be empty!", "error");
+        return;
+    }
+
+    if (address === "") {
+        Swal.fire("Error", "Address cannot be empty!", "error");
+        return;
+    }
+
+    const nameRegex = /^[A-Za-z]+$/;
+
+    if (!nameRegex.test(f_name)) {
+        Swal.fire("Error", "First Name should contain only letters!", "error");
+        return;
+    }
+    if (!nameRegex.test(l_name)) {
+        Swal.fire("Error", "Last Name should contain only letters!", "error");
+        return;
+    }
+
+    const addressRegex = /^[A-Za-z0-9\s,.\-\/#]+$/;
+
+    if(!addressRegex.test(address)){
+        Swal.fire("Error","not a valid address","error")
+        return;
+    }
+
 
     add_st(f_name,l_name,address)
     add_student_record();
     //add_student_record(student_obj);
+});
+
+$('#student_update_btn').on('click',function (){
+    var f_name=$('#f_name').val().trim();
+    var l_name=$('#l_name').val().trim();
+    var address=$('#address').val().trim();
+    if (f_name === "") {
+        Swal.fire("Error", "First Name cannot be empty!", "error");
+        return;
+    }
+
+    if (l_name === "") {
+        Swal.fire("Error", "Last Name cannot be empty!", "error");
+        return;
+    }
+
+    if (address === "") {
+        Swal.fire("Error", "Address cannot be empty!", "error");
+        return;
+    }
+
+    const nameRegex = /^[A-Za-z]+$/;
+
+    if (!nameRegex.test(f_name)) {
+        Swal.fire("Error", "First Name should contain only letters!", "error");
+        return;
+    }
+    if (!nameRegex.test(l_name)) {
+        Swal.fire("Error", "Last Name should contain only letters!", "error");
+        return;
+    }
+
+    const addressRegex = /^[A-Za-z0-9\s,.\-\/#]+$/;
+
+    if(!addressRegex.test(address)){
+        Swal.fire("Error","not a valid address","error")
+        return;
+    }
+
+    update_st(f_name,l_name,address,index);
+    add_student_record();
+    Swal.fire("Success", "Student updated successfully!", "success");
+
 });
 
 

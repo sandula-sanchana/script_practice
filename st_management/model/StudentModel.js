@@ -10,6 +10,12 @@ const add_st=(f_name,l_name,address)=>{
 
 //update
 
+const update_st=(f_name,l_name,address,index)=>{
+    student_data[index].f_name=f_name;
+    student_data[index].l_name=l_name;
+    student_data[index].address=address;
+};
+
 //delete
 
 const delete_st=(index)=>{
@@ -27,4 +33,4 @@ const get_all=()=>{
    return student_data;
 }
 
-export {add_st,delete_st,get_all,get_a_st};
+export {add_st,delete_st,get_all,get_a_st,update_st};
